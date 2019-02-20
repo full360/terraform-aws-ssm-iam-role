@@ -67,9 +67,3 @@ resource "aws_iam_role_policy_attachment" "default" {
   role       = "${aws_iam_role.default.name}"
   policy_arn = "${aws_iam_policy.default.arn}"
 }
-
-resource "aws_iam_role_policy_attachment" "amazon_ecs_task_execution_role_policy_attach" {
-  count                                             = "${var.aws_principal_service == 'ecs-tasks' ? 1 : 0}"
-  role       = "${aws_iam_role.default.name}"
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
-}
