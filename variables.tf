@@ -50,6 +50,12 @@ variable "assume_role_arns" {
   description = "List of ARNs to allow assuming the role. Could be AWS services or accounts, Kops nodes, IAM users or groups"
 }
 
+variable "aws_principal_service" {
+  type        = "string"
+  default = "ec2"
+  description = "ec2 (default) or ecs-tasks used in the assume role"
+}
+
 variable "ssm_actions" {
   type        = "list"
   default     = ["ssm:GetParametersByPath", "ssm:GetParameters"]
