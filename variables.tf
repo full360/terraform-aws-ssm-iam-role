@@ -52,7 +52,7 @@ variable "assume_role_arns" {
 
 variable "aws_principal_service" {
   type        = "string"
-  default = "ec2"
+  default     = "ec2"
   description = "ec2 (default) or ecs-tasks used in the assume role"
 }
 
